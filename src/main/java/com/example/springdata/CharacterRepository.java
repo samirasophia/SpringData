@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CharacterRepository extends MongoRepository<Characters, ObjectId> {
-//Anstatt dumme Asterix Namen, bleibe ich bei meinen Produkten
+
+
 }
