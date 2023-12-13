@@ -1,6 +1,7 @@
 package Asterixx;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.List;
 
 //@Service
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api/characters")
 @RequiredArgsConstructor
 public class CharacterCon {
 
@@ -39,10 +40,12 @@ public class CharacterCon {
     public void deleteCharacter(@PathVariable String id) {
         service.delete(id);
     }
-@PutMapping("/put/{id}")
-    public void updateCharacter(@PathVariable String id, String id2){
-        service.updateCharacterId(id, id2);
+@PutMapping("{id}")
+    public Character updateCharacter(@PathVariable String id, @RequestParam String newId){
+       return service.updateCharacterId(id, newId);
+
 }
+
 }
 
 
